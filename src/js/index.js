@@ -1,17 +1,18 @@
-import { fetchImages } from '../js/fetchImages';
-import Notiflix from 'notiflix';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
+import { fetchImages } from '../js/fetchImages';
+import Notiflix from 'notiflix';
 
 const input = document.querySelector('.search-form-input');
-const btnSearch = document.querySelector('.search-form-button');
+const btnSearchForm = document.querySelector('.search-form-button');
 const gallery = document.querySelector('.gallery');
 const btnLoadMore = document.querySelector('.load-more');
+
 let gallerySimpleLightbox = new SimpleLightbox('.gallery a');
 btnLoadMore.style.display = 'none';
 
 let pageNumber = 1;
-btnSearch.addEventListener('click', e => {
+btnSearchForm.addEventListener('click', e => {
   e.preventDefault();
   cleanGallery();
   const trimmedValue = input.value.trim();
